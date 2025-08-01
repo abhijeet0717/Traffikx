@@ -15,7 +15,7 @@ import Profile from "./pages/Profile";
 import Import from "./pages/Import";
 import SearchPage from "./pages/SearchPage";
 import Settings from "./pages/Settings";
-import ManagePage from "./pages/ManagePage";
+import CalendarPage from "./pages/CalendarPage";
 import Navbar from "./components/Navbar";
 
 const queryClient = new QueryClient();
@@ -66,7 +66,7 @@ const AppRoutes = () => {
         path="/manage" 
         element={
           <PageTransition>
-            <ManagePage />
+            <CalendarPage />
           </PageTransition>
         } 
       />

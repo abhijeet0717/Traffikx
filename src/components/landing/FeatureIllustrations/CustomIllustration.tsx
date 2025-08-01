@@ -2,7 +2,8 @@
 import React from 'react';
 import { FeatureIcon } from './FeatureIcon';
 import { cn } from '@/lib/utils';
-import { Brain, FileUp, Puzzle, Share, Users, Layers, ArrowRight, FileText, Database, Search } from 'lucide-react';
+import { FileUp, Puzzle, Share, Users, Layers, ArrowRight, FileText, Database, Search } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 interface CustomIllustrationProps {
   featureIndex: number;
@@ -82,7 +83,7 @@ export const CustomIllustration: React.FC<CustomIllustrationProps> = ({
             </div>
             <ArrowRight className="absolute left-28 top-1/2 transform -translate-y-1/2 text-primary w-8 h-8" />
             <div className="neural-node w-20 h-20 flex items-center justify-center">
-              <Brain className="text-primary w-10 h-10" />
+              <Logo size={56} className="text-primary" />
             </div>
             <div className="absolute right-24 bottom-10 text-xs bg-primary/10 p-2 rounded">Import data from various sources</div>
           </div>
@@ -117,7 +118,7 @@ export const CustomIllustration: React.FC<CustomIllustrationProps> = ({
         return (
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="neural-node w-24 h-24 flex items-center justify-center mb-4">
-              <Brain className="text-primary w-12 h-12" />
+              <Logo size={64} className="text-primary" />
             </div>
             <div className="absolute top-10 left-10 neural-node w-16 h-16 flex items-center justify-center">
               <span className="text-xs">Work</span>
@@ -140,7 +141,7 @@ export const CustomIllustration: React.FC<CustomIllustrationProps> = ({
             <div className="flex flex-col items-center">
               <div className="relative">
                 <div className="neural-node w-24 h-24 flex items-center justify-center">
-                  <Brain className="text-primary w-12 h-12" />
+                  <Logo size={64} className="text-primary" />
                 </div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-amber-500/30 flex items-center justify-center">
                   <span className="text-amber-600 text-xs">AI</span>
@@ -175,7 +176,7 @@ export const CustomIllustration: React.FC<CustomIllustrationProps> = ({
         return (
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="neural-node w-20 h-20 flex items-center justify-center">
-              <Brain className="text-primary w-10 h-10" />
+              <Logo size={56} className="text-primary" />
             </div>
             <Share className="absolute right-20 top-1/3 text-primary w-10 h-10" />
             <div className="absolute right-16 bottom-1/3 flex space-x-2">

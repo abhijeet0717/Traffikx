@@ -1,5 +1,6 @@
 
-import { BrainCircuit, Search, FileText, LinkIcon, Database, Network, Sparkles } from 'lucide-react';
+import { Search, FileText, LinkIcon, Database, Network, Sparkles } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedTransition } from '@/components/AnimatedTransition';
 
@@ -10,7 +11,7 @@ interface FeatureSectionProps {
 export const FeatureSection = ({ showFeatures }: FeatureSectionProps) => {
   const features = [
     {
-      icon: <BrainCircuit size={24} />,
+      icon: <Logo size={32} />,
       title: "Neural Connections",
       description: "Build meaningful connections between your notes, files, and ideas with our visual network view.",
       color: "from-primary/60 to-primary/40"

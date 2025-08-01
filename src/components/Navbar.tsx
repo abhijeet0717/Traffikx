@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code } from 'lucide-react';
+import { LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 import { useRippleEffect } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/contexts/AuthContext';
@@ -159,7 +160,7 @@ export const Navbar = () => {
             {/* Cortex with submenu */}
             <NavItem
               to="#"
-              icon={<Brain size={20} />}
+              icon={<Logo size={28} />}
               label="Traffikx"
               active={['what', 'why', 'how'].includes(active)}
               onClick={() => {}}

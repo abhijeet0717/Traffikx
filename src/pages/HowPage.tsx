@@ -1,8 +1,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useAnimateIn } from '@/lib/animations';
+import { Logo } from '@/components/Logo';
 import { 
-  Brain, 
   Lightbulb, 
   Search, 
   Upload, 
@@ -288,7 +288,7 @@ const HowPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ValueProp
-              icon={<Brain className="w-8 h-8 text-primary" />}
+              icon={<Logo size={40} className="text-primary" />}
               title="Focus is freedom"
               description="Cortex helps you stay focused by eliminating distractions and streamlining your thinking process."
             />
@@ -329,7 +329,7 @@ const HowPage = () => {
               description="Our AI automatically categorizes and tags your content for effortless organization."
             />
             <FeatureCard
-              icon={<Brain className="w-8 h-8 text-primary" />}
+              icon={<Logo size={40} className="text-primary" />}
               title="Connect"
               description="Discover hidden connections between your ideas with our neural network visualization."
             />
