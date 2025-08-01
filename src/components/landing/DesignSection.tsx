@@ -50,7 +50,7 @@ export const DesignSection = ({
   return <AnimatedTransition show={show} animation="slide-up" duration={600}>
       <div className="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-2 mb-12">
-          <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Plan</h2>
+          <h2 className="text-4xl font-bold text-foreground md:text-8xl">Plan</h2>
           <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">Choose from 200+ optimized route templates tailored to your travel needs.</p>
         </div>
 

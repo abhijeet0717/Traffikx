@@ -28,13 +28,13 @@ const ProjectStageColumn: React.FC<ProjectStageColumnProps> = ({
   const renderStageIcon = (stage: ProjectStage) => {
     switch (stage) {
       case 'planning':
-        return <Flag className="h-5 w-5 text-blue-500" />;
+        return <Flag className="h-5 w-5 text-primary" />;
       case 'inProgress':
-        return <Clock className="h-5 w-5 text-amber-500" />;
+        return <Clock className="h-5 w-5 text-muted-foreground" />;
       case 'review':
-        return <MessageSquare className="h-5 w-5 text-purple-500" />;
+        return <MessageSquare className="h-5 w-5 text-muted-foreground" />;
       case 'completed':
-        return <CheckCircle2 className="h-5 w-5 text-green-500" />;
+        return <CheckCircle2 className="h-5 w-5 text-primary" />;
       default:
         return null;
     }
@@ -58,11 +58,11 @@ const ProjectStageColumn: React.FC<ProjectStageColumnProps> = ({
   const renderStageColor = (stage: ProjectStage) => {
     switch (stage) {
       case 'planning':
-        return 'bg-blue-500/10 text-blue-500 border-blue-200';
+        return 'bg-primary/10 text-primary border-border';
       case 'inProgress':
-        return 'bg-amber-500/10 text-amber-500 border-amber-200';
+        return 'bg-muted text-muted-foreground border-border';
       case 'review':
-        return 'bg-purple-500/10 text-purple-500 border-purple-200';
+        return 'bg-muted text-muted-foreground border-border';
       case 'completed':
         return 'bg-green-500/10 text-green-500 border-green-200';
       default:

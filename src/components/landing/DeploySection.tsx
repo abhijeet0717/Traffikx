@@ -26,7 +26,7 @@ export const DeploySection = ({
   return <AnimatedTransition show={show} animation="slide-up" duration={600}>
       <div className="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-2 mb-12">
-          <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Impact</h2>
+          <h2 className="text-4xl font-bold text-foreground md:text-8xl">Impact</h2>
           <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">
             Transform your daily commute and reduce traffic congestion citywide.
           </p>

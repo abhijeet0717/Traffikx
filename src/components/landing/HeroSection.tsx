@@ -20,7 +20,7 @@ export const HeroSection = ({
   return <div className="py-20 md:py-28 flex flex-col items-center text-center">
       <AnimatedTransition show={showTitle} animation="slide-up" duration={600}>
         {/* Title first */}
-        <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-blue-600 md:text-7xl">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-foreground md:text-7xl">
           Be on time
         </h1>
         

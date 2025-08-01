@@ -14,18 +14,18 @@ export const CustomIllustration: React.FC<CustomIllustrationProps> = ({
   className 
 }) => {
   const bgColors = [
-    'from-blue-500/20 to-purple-500/20',    // Add Cells
-    'from-green-500/20 to-blue-500/20',     // Plug & Play
-    'from-purple-500/20 to-pink-500/20',    // Spatial Thinking
-    'from-indigo-500/20 to-blue-500/20',    // Contextual
-    'from-amber-500/20 to-orange-500/20',   // Intelligence
-    'from-teal-500/20 to-green-500/20',     // Clip
-    'from-blue-500/20 to-indigo-500/20',    // Agnostic
-    'from-violet-500/20 to-purple-500/20',  // Search
-    'from-emerald-500/20 to-teal-500/20',   // Private
-    'from-rose-500/20 to-pink-500/20',      // Recognition
-    'from-cyan-500/20 to-blue-500/20',      // Share
-    'from-orange-500/20 to-amber-500/20',   // D/L mode
+    'from-primary/20 to-muted/20',    // Add Cells
+    'from-muted/30 to-primary/20',     // Plug & Play
+    'from-primary/30 to-muted/20',    // Spatial Thinking
+    'from-muted/20 to-primary/20',    // Contextual
+    'from-primary/20 to-muted/30',   // Intelligence
+    'from-muted/20 to-primary/20',     // Clip
+    'from-primary/20 to-muted/20',    // Agnostic
+    'from-muted/30 to-primary/20',  // Search
+    'from-primary/20 to-muted/20',   // Private
+    'from-muted/20 to-primary/30',      // Recognition
+    'from-primary/30 to-muted/20',      // Share
+    'from-muted/20 to-primary/20',   // D/L mode
   ];
 
   const titles = [

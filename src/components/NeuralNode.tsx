@@ -21,11 +21,11 @@ export const NeuralNode: React.FC<NeuralNodeProps> = ({
   const size = node.size || Math.floor(Math.random() * 30) + 40; // Random size between 40-70px
   
   const typeColors = {
-    note: 'from-blue-400/60 to-blue-600/40',
-    link: 'from-purple-400/60 to-purple-600/40',
-    file: 'from-green-400/60 to-green-600/40',
-    image: 'from-amber-400/60 to-amber-600/40',
-    project: 'from-rose-400/60 to-rose-600/40',
+    note: 'from-primary/60 to-primary/40',
+    link: 'from-muted/80 to-muted/60',
+    file: 'from-primary/60 to-primary/40',
+    image: 'from-muted/80 to-muted/60',
+    project: 'from-primary/60 to-primary/40',
   };
   
   const nodeColor = node.color || typeColors[node.type];

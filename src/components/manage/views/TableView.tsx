@@ -72,7 +72,7 @@ const TableView = ({
                 </div>
               </TableCell>
               <TableCell className="font-medium">{item.title}</TableCell>
-              <TableCell className="text-blue-500 hover:underline">
+              <TableCell className="text-primary hover:underline">
                 <a href={item.url}>{item.url}</a>
               </TableCell>
               <TableCell>

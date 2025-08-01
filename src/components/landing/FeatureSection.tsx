@@ -13,7 +13,7 @@ export const FeatureSection = ({ showFeatures }: FeatureSectionProps) => {
       icon: <BrainCircuit size={24} />,
       title: "Neural Connections",
       description: "Build meaningful connections between your notes, files, and ideas with our visual network view.",
-      color: "from-blue-400/60 to-blue-600/40"
+      color: "from-primary/60 to-primary/40"
     },
     {
       icon: <Search size={24} />,

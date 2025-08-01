@@ -30,7 +30,7 @@ const CortexSidebar = ({
     {
       id: 'shared',
       name: 'Shared',
-      icon: <Share size={16} className="text-blue-500" />,
+      icon: <Share size={16} className="text-primary" />,
       items: [
         { id: 'shared-1', name: 'Second Brain' },
         { id: 'shared-2', name: 'OSS' },

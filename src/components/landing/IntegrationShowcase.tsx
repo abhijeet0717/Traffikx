@@ -22,7 +22,7 @@ export const IntegrationShowcase = ({
   }, {
     name: "Google Docs",
     logo: "M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-4Z M9 13h6 M9 9h6 M9 17h6",
-    color: "bg-gradient-to-br from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-700",
+    color: "bg-gradient-to-br from-primary to-primary/80 dark:from-primary dark:to-primary/80",
     description: "Pull content directly from your Google Docs while maintaining formatting and links."
   }, {
     name: "Obsidian",

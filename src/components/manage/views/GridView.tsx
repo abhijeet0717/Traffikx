@@ -63,7 +63,7 @@ const GridView = ({
                   </span>
                 ))}
               </div>
-              <a href={item.url} className="text-sm text-blue-500 hover:underline">{item.url}</a>
+              <a href={item.url} className="text-sm text-primary hover:underline">{item.url}</a>
             </div>
           </Card>
         );
