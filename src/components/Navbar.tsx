@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code, Edit } from 'lucide-react';
+import { LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code, Edit, Calendar } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { useRippleEffect } from '@/lib/animations';
 import { cn } from '@/lib/utils';
@@ -23,13 +23,14 @@ interface NavItemProps {
   to: string;
   icon: React.ReactNode;
   label: string;
+  description?: string;
   active: boolean;
   onClick: () => void;
   hasSubmenu?: boolean;
   children?: React.ReactNode;
 }
 
-const NavItem = ({ to, icon, label, active, onClick, hasSubmenu, children }: NavItemProps) => {
+const NavItem = ({ to, icon, label, description, active, onClick, hasSubmenu, children }: NavItemProps) => {
   const handleRipple = useRippleEffect();
   
   if (hasSubmenu) {
@@ -91,13 +92,16 @@ const NavItem = ({ to, icon, label, active, onClick, hasSubmenu, children }: Nav
         </Link>
       </TooltipTrigger>
       <TooltipContent>
-        <p>{label}</p>
+        <div className="text-center">
+          <p className="font-medium">{label}</p>
+          {description && <p className="text-xs text-gray-600 mt-1">{description}</p>}
+        </div>
       </TooltipContent>
     </Tooltip>
   );
 };
 
-const SubMenuItem = ({ to, icon, label, active, onClick }: NavItemProps) => {
+const SubMenuItem = ({ to, icon, label, description, active, onClick }: NavItemProps) => {
   return (
     <Link 
       to={to} 
@@ -143,11 +147,11 @@ export const Navbar = () => {
   ];
   
   const authNavItems = [
-    { to: '/manage', icon: <Table size={20} />, label: 'Manage', id: 'manage' },
-    { to: '/search', icon: <Search size={20} />, label: 'Search', id: 'search' },
-    { to: '/import', icon: <Edit size={20} />, label: 'Edit Details', id: 'import' },
-    { to: '/profile', icon: <User size={20} />, label: 'Profile', id: 'profile' },
-    { to: '/settings', icon: <Settings size={20} />, label: 'Settings', id: 'settings' },
+    { to: '/manage', icon: <Calendar size={20} />, label: 'Events', description: 'View traffic events and congestion calendar', id: 'manage' },
+    { to: '/search', icon: <Search size={20} />, label: 'Search', description: 'Search and plan optimal routes', id: 'search' },
+    { to: '/import', icon: <Edit size={20} />, label: 'Edit Details', description: 'Manage your personal and vehicle information', id: 'import' },
+    { to: '/profile', icon: <User size={20} />, label: 'Profile', description: 'View and edit your user profile', id: 'profile' },
+    { to: '/settings', icon: <Settings size={20} />, label: 'Settings', description: 'Configure app preferences', id: 'settings' },
   ];
 
   const navItems = isAuthenticated ? authNavItems : [];
@@ -185,6 +189,7 @@ export const Navbar = () => {
                 to={item.to}
                 icon={item.icon}
                 label={item.label}
+                description={item.description}
                 active={active === item.id}
                 onClick={() => handleNavItemClick(item.id)}
               />
