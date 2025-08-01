@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code } from 'lucide-react';
+import { LogIn, Search, Upload, User, Settings, LogOut, Moon, Sun, Table, Info, HelpCircle, Code, Edit } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { useRippleEffect } from '@/lib/animations';
 import { cn } from '@/lib/utils';
@@ -145,7 +145,7 @@ export const Navbar = () => {
   const authNavItems = [
     { to: '/manage', icon: <Table size={20} />, label: 'Manage', id: 'manage' },
     { to: '/search', icon: <Search size={20} />, label: 'Search', id: 'search' },
-    { to: '/import', icon: <Upload size={20} />, label: 'Import', id: 'import' },
+    { to: '/import', icon: <Edit size={20} />, label: 'Edit Details', id: 'import' },
     { to: '/profile', icon: <User size={20} />, label: 'Profile', id: 'profile' },
     { to: '/settings', icon: <Settings size={20} />, label: 'Settings', id: 'settings' },
   ];
