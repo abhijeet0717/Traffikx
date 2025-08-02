@@ -105,11 +105,11 @@ const Profile = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'verified': return 'bg-green-100 text-green-800 border-green-200';
-      case 'pending': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'expired': return 'bg-red-100 text-red-800 border-red-200';
-      case 'active': return 'bg-blue-100 text-blue-800 border-blue-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'verified': return 'bg-green-100 text-green-800 border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800';
+      case 'pending': return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-800';
+      case 'expired': return 'bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-400 dark:border-red-800';
+      case 'active': return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-800';
+      default: return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800/30 dark:text-gray-400 dark:border-gray-700';
     }
   };
 
@@ -123,19 +123,19 @@ const Profile = () => {
               <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                 JD
               </div>
-              <button className="absolute -bottom-1 -right-1 bg-white rounded-full p-1.5 shadow-md border">
-                <Camera className="h-3 w-3 text-gray-600" />
+              <button className="absolute -bottom-1 -right-1 bg-white dark:bg-gray-800 rounded-full p-1.5 shadow-md border dark:border-gray-700">
+                <Camera className="h-3 w-3 text-gray-600 dark:text-gray-400" />
               </button>
             </div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-2">
-                <h1 className="text-2xl font-bold text-gray-900">{userData.personalInfo.name}</h1>
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{userData.personalInfo.name}</h1>
                 <Button variant="outline" size="sm">
                   <Edit3 className="h-4 w-4 mr-2" />
                   Edit Details
                 </Button>
               </div>
-              <div className="space-y-2 text-gray-600">
+              <div className="space-y-2 text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
                   <span>{userData.personalInfo.email}</span>
@@ -233,18 +233,18 @@ const Profile = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="bg-green-100 p-1.5 rounded-full">
-                  <CheckCircle className="h-4 w-4 text-green-600" />
+              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <div className="bg-green-100 dark:bg-green-900/30 p-1.5 rounded-full">
+                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                 </div>
                 <div>
                   <p className="font-medium text-sm">Trip completed successfully</p>
-                  <p className="text-xs text-gray-600">Downtown to Airport • 45 min • 2 hours ago</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Downtown to Airport • 45 min • 2 hours ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="bg-blue-100 p-1.5 rounded-full">
-                  <Navigation className="h-4 w-4 text-blue-600" />
+              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-full">
+                  <Navigation className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
                   <p className="font-medium text-sm">Route optimized</p>
@@ -489,22 +489,22 @@ const Profile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
       <AnimatedTransition show={showContent} animation="slide-up" duration={600}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               User Profile
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Manage your personal information, vehicles, documents, and account settings
             </p>
           </div>
 
           {/* Tab Navigation */}
           <div className="mb-8">
-            <div className="border-b border-gray-200">
+            <div className="border-b border-gray-200 dark:border-gray-700">
               <nav className="-mb-px flex space-x-8 justify-center">
                 {tabs.map((tab) => (
                   <button
@@ -512,8 +512,8 @@ const Profile = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`flex items-center gap-2 py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
                       activeTab === tab.id
-                        ? 'border-black text-black'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        ? 'border-black dark:border-white text-black dark:text-white'
+                        : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                     }`}
                   >
                     {tab.icon}

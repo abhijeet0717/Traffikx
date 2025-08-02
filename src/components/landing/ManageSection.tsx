@@ -52,7 +52,7 @@ export const ManageSection = ({
   return <AnimatedTransition show={show} animation="slide-up" duration={600}>
       <div className="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-2 mb-12">
-          <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Optimize</h2>
+          <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Be on time</h2>
           <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">The first AI-powered traffic optimization system for your daily commute.</p>
         </div>
 

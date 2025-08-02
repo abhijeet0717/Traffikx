@@ -49,7 +49,7 @@ const SearchPage = () => {
       description: 'Via Highway 101 and Main Street',
       highlights: ['Least travel time', 'Moderate traffic'],
       icon: <Zap className="h-5 w-5 text-yellow-600" />,
-      color: 'border-yellow-200 bg-yellow-50'
+      color: 'border-yellow-200 bg-yellow-50 dark:border-yellow-800 dark:bg-yellow-900/20'
     },
     {
       id: 2,
@@ -63,7 +63,7 @@ const SearchPage = () => {
       description: 'Via Oak Avenue and 5th Street',
       highlights: ['Least distance', 'Lower fuel cost'],
       icon: <Route className="h-5 w-5 text-blue-600" />,
-      color: 'border-blue-200 bg-blue-50'
+      color: 'border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-900/20'
     },
     {
       id: 3,
@@ -77,30 +77,30 @@ const SearchPage = () => {
       description: 'Via Riverside Drive and Central Ave',
       highlights: ['Balanced time & distance', 'Light traffic', 'Scenic route'],
       icon: <Star className="h-5 w-5 text-green-600" />,
-      color: 'border-green-200 bg-green-50',
+      color: 'border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/20',
       recommended: true
     }
   ];
 
   const getTrafficColor = (condition: string) => {
     switch (condition) {
-      case 'light': return 'text-green-600 bg-green-100';
-      case 'moderate': return 'text-yellow-600 bg-yellow-100';
-      case 'heavy': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
+      case 'light': return 'text-green-600 bg-green-100 dark:text-green-400 dark:bg-green-900/30';
+      case 'moderate': return 'text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/30';
+      case 'heavy': return 'text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/30';
+      default: return 'text-gray-600 bg-gray-100 dark:text-gray-400 dark:bg-gray-800/30';
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
       <AnimatedTransition show={showContent} animation="slide-up" duration={600}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Smart Route Planning
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Find the fastest, shortest, and best overall routes to your destination with real-time traffic analysis
             </p>
           </div>
@@ -119,9 +119,9 @@ const SearchPage = () => {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">From</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">From</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
                     <Input
                       placeholder="Enter starting location"
                       value={fromLocation}
@@ -131,9 +131,9 @@ const SearchPage = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">To</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">To</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
                     <Input
                       placeholder="Enter destination"
                       value={toLocation}
@@ -145,7 +145,7 @@ const SearchPage = () => {
                 <div className="flex items-end">
                   <Button 
                     onClick={handleSearch}
-                    className="w-full bg-black hover:bg-gray-800 text-white"
+                    className="w-full bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 text-white"
                   >
                     Find Routes
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -160,7 +160,7 @@ const SearchPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Route Options */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Route Options</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Route Options</h2>
                 
                 {routeOptions.map((route, index) => (
                   <Card key={route.id} className={`relative ${route.color} border-2 transition-all hover:shadow-lg`}>
@@ -186,30 +186,30 @@ const SearchPage = () => {
                     <CardContent>
                       <div className="grid grid-cols-2 gap-4 mb-4">
                         <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-gray-500" />
+                          <Clock className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                           <span className="font-semibold">{route.duration}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Route className="h-4 w-4 text-gray-500" />
+                          <Route className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                           <span>{route.distance}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Fuel className="h-4 w-4 text-gray-500" />
+                          <Fuel className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                           <span>{route.fuelCost}</span>
                           {route.savings && (
-                            <span className="text-green-600 text-sm">
+                            <span className="text-green-600 dark:text-green-400 text-sm">
                               (Save {route.savings})
                             </span>
                           )}
                         </div>
                         <div className="flex items-center gap-2">
-                          <TrendingUp className="h-4 w-4 text-gray-500" />
+                          <TrendingUp className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                           <span className="text-sm">Real-time data</span>
                         </div>
                       </div>
                       
                       <div className="space-y-2">
-                        <p className="text-sm font-medium text-gray-700">Key Features:</p>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Key Features:</p>
                         <div className="flex flex-wrap gap-1">
                           {route.highlights.map((highlight, idx) => (
                             <Badge key={idx} variant="secondary" className="text-xs">
@@ -219,7 +219,7 @@ const SearchPage = () => {
                         </div>
                       </div>
                       
-                      <Button className="w-full mt-4 bg-black hover:bg-gray-800 text-white">
+                      <Button className="w-full mt-4 bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 text-white">
                         Select This Route
                       </Button>
                     </CardContent>
@@ -235,12 +235,12 @@ const SearchPage = () => {
                     <CardTitle>Route Preview</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-green-100"></div>
+                    <div className="bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-green-100 dark:from-blue-900/30 dark:to-green-900/30"></div>
                       <div className="relative z-10 text-center">
-                        <MapPin className="h-12 w-12 text-gray-600 mx-auto mb-2" />
-                        <p className="text-gray-600 font-medium">Interactive Map View</p>
-                        <p className="text-sm text-gray-500">Real-time traffic visualization</p>
+                        <MapPin className="h-12 w-12 text-gray-600 dark:text-gray-400 mx-auto mb-2" />
+                        <p className="text-gray-600 dark:text-gray-300 font-medium">Interactive Map View</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Real-time traffic visualization</p>
                       </div>
                       
                       {/* Mock route lines */}
