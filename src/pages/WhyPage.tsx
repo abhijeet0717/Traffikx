@@ -45,7 +45,7 @@ const WhyPage = () => {
   }, []);
   
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden font-['Poppins',sans-serif]">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
       <div className="absolute top-1/3 right-0 w-[300px] h-[300px] rounded-full bg-primary/5 blur-3xl -z-10"></div>
@@ -63,7 +63,7 @@ const WhyPage = () => {
           
           <div className="mt-10 glass-panel p-8 md:p-10 rounded-lg max-w-3xl mx-auto shadow-lg border-2 border-primary/20">
             <p className="text-xl md:text-2xl text-foreground/90">
-              Why should Cortex exist? Why should anyone care to use it? Why is privacy so important to us?
+              Why should Traffikx exist? Why should anyone care about solving traffic?
             </p>
             <p className="text-xl md:text-2xl text-foreground/90 mt-6">
               Eventually, the "why" led us here.
@@ -74,27 +74,18 @@ const WhyPage = () => {
         <WhySection
           id="why-1"
           icon={<Lightbulb className="w-6 h-6 text-primary" />}
-          title="Because why not do something different?"
+          title="Because traffic isn't just about vehicles — it's about lives, time, and the world we live in."
           content={
             <>
               <p>
-                We've always approached product design this way. We look at our current tools and ask ourselves why it's done the way it is. Why do bookmarking tools have social features? Why do we use folders? Dropdowns? Are these outdated UI patterns still useful or are they just clutter? What if we do it better? Or just different?
+                We've always looked at traffic not just as an inconvenience, but as a systemic problem—one that affects emergency response, pollution, productivity, and public well-being. Every minute lost in congestion is a moment that could've been spent on something meaningful. Every stalled ambulance is a life put at risk. Every idling engine is another breath of toxic air.
               </p>
               <p>
-                With Cortex we ultimately asked ourselves, why not? Why not find a different way to save what we care about? Why not remove all the other stuff that just gets in the way? Forget how it's usually done. Why not make it better?
+                So we asked ourselves: Why does traffic still work the way it did 30 years ago? Why haven't we used AI to manage roads in real time? Why do we accept this chaos when we could create order?
               </p>
-              <div className="mt-6">
-                <Button variant="outline" className="gap-2" asChild>
-                  <Link to="/how">
-                    MORE ON HOW WE THINK
-                    <ExternalLink size={16} />
-                  </Link>
-                </Button>
-              </div>
-              <div className="mt-4 text-sm text-muted-foreground">
-                <p className="font-medium">The beginning — How did we end up creating Cortex?</p>
-                <p className="mt-2 font-medium">A letter — How can we build an extension of your mind?﻿</p>
-              </div>
+              <p>
+                With Traffikx, we asked — why not? Why not rethink how cities move? Why not build a system that learns, adapts, and flows — just like the people it serves?
+              </p>
             </>
           }
         />
@@ -102,34 +93,12 @@ const WhyPage = () => {
         <WhySection
           id="why-2"
           icon={<Heart className="w-6 h-6 text-primary" />}
-          title="Because we need better relationships with technology."
+          title="Because time matters. Because clean air matters. Because ambulances shouldn't have to wait."
           content={
             <>
               <p>
-                There was a time when our tools were just tools. We picked up a hammer to build something, then put it back on the shelf when we were finished. It was a tool made for one simple purpose. It had no ulterior motives.
+                Because traffic shouldn't cost cities billions. Because smarter systems can lead to better cities.
               </p>
-              <p>
-                Fast forward to today, and our tools have evolved. They've become smarter. They have algorithms, feeds, notifications. They are designed to make us spend as much time with them as possible. We must feed them, manage them, clean them, engage with them. Our tools no longer serve our purpose. We serve theirs.
-              </p>
-              <p>
-                Could we not use the magic of technology to build something better? Something that truly benefits us, rather than taking from us. Something designed in a way that fosters a special relationship with our tools once again. Something that serves a simple, necessary purpose.
-              </p>
-              <p>
-                We decided we could.
-              </p>
-              <div className="mt-6">
-                <Button variant="outline" className="gap-2" asChild>
-                  <Link to="/how">
-                    HOW WE MAKE OUR DECISIONS
-                    <ExternalLink size={16} />
-                  </Link>
-                </Button>
-              </div>
-              <div className="mt-4 text-sm text-muted-foreground">
-                <p className="font-medium">Our promise from us to you</p>
-                <p className="mt-2 font-medium">A thought from Cortex on social features﻿</p>
-                <p className="mt-2 font-medium">A tool that works with your brain, not against it</p>
-              </div>
             </>
           }
         />
@@ -137,14 +106,11 @@ const WhyPage = () => {
         <WhySection
           id="why-3"
           icon={<RefreshCw className="w-6 h-6 text-primary" />}
-          title="Because new beginnings are beautiful."
+          title="We're building Traffikx not just for India — but for the world."
           content={
             <>
               <p>
-                There's a reason we don't have an import feature. We like the idea of starting from scratch. Not only because humanity revolves around fresh starts, but this also requires you to reevaluate your relationship with data. It inspires you to be more conscious, more meticulous, more mindful of the things you save and collect.
-              </p>
-              <p>
-                Digital clutter and information fatigue affect our real minds, whether we're aware of it or not. We want your new mind to be a break from that. It's a clean slate where you can deliberately choose what to save and consume. A mental sigh of relief.
+                For a future where your commute doesn't steal your day. Where traffic signals think ahead. Where roads respond. Where cities breathe.
               </p>
             </>
           }
@@ -153,17 +119,11 @@ const WhyPage = () => {
         <WhySection
           id="why-4"
           icon={<Zap className="w-6 h-6 text-primary" />}
-          title="Because a tool is just the means to an end, not the end in itself."
+          title="We're not just building another tool. We're building infrastructure for the future."
           content={
             <>
               <p>
-                We built Cortex for doers and makers. For people who are busy doing other things and simply need a place to collect and remember what they care about.
-              </p>
-              <p>
-                Cortex doesn't interfere, doesn't bother and doesn't ask to be maintained. It's meant to serve you, as an extension of your mind. So you can think about anything and everything except the tool itself.
-              </p>
-              <p>
-                Because that's all it is: A tool meant to help you achieve something else. Those who like to procrastinate with folders and unmaintainable systems will find plenty of other apps to keep them busy. Cortex is for those who would rather draw and write and build and dance and sing.
+                And we believe it's worth getting right.
               </p>
             </>
           }
@@ -172,7 +132,7 @@ const WhyPage = () => {
         <div className="mt-16 text-center">
           <Button size="lg" className="gap-2" asChild>
             <Link to="/">
-              Start Your Journey
+              Transform Your City
               <Stars size={18} />
             </Link>
           </Button>

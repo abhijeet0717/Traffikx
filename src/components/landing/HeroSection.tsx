@@ -12,7 +12,7 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<'scattered' | 'convergence' | 'organized'>('scattered');
-  const [heroText, setHeroText] = useState("AI-powered system to solve one of the world's most frustrating problems: traffic congestion.");
+  const [heroText, setHeroText] = useState("AI-powered system to solve one of the world's most frustrating problems: Traffic Congestion.");
   const handleSectionClick = (section: 'scattered' | 'convergence' | 'organized', text: string) => {
     setActiveSection(section);
     setHeroText(text);

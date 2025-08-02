@@ -10,6 +10,9 @@ export const ManageSection = ({
 }: ManageSectionProps) => {
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const features = [{
+    title: "Calendar Sync",
+    description: "Seamlessly integrate with your calendar for proactive departure time suggestions."
+  }, {
     title: "Route Import",
     description: "Import traffic data (Google Maps API, satellite tracking, GPS data) or create custom route entries."
   }, {
@@ -42,9 +45,6 @@ export const ManageSection = ({
   }, {
     title: "Route Sharing",
     description: "Share optimal routes and commute insights with family, friends, or team members."
-  }, {
-    title: "Calendar Sync",
-    description: "Seamlessly integrate with your calendar for proactive departure time suggestions."
   }];
   const handleFeatureClick = (index: number) => {
     setActiveFeature(index === activeFeature ? null : index);

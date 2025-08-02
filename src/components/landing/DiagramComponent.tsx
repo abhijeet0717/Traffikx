@@ -69,7 +69,7 @@ const DiagramComponent = ({ onSectionClick, activeSection }: DiagramComponentPro
         </div>
       </div>
 
-      {/* Organized Mind Side */}
+      {/* Organized Car Side */}
       <div 
         className={cn(
           "absolute right-0 top-1/2 -translate-y-1/2 w-1/3 transform transition-all duration-300 cursor-pointer",

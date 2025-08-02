@@ -165,11 +165,11 @@ const HowPage = () => {
           <div ref={heroRef} className="relative w-full max-w-3xl mx-auto">
             <div className="absolute -z-10 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-primary/30 to-accent/30 blur-3xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
             <div className="glass-panel rounded-full py-5 px-8 inline-block mx-auto mb-12">
-              <h1 className="text-2xl md:text-3xl font-bold text-primary">How does Cortex work?</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-primary">How does Traffikx work?</h1>
             </div>
             
             <p className="text-xl text-center text-foreground/80 max-w-2xl mx-auto mb-12">
-              There's a lot of magic and sophisticated technology behind Cortex, but we've kept it simple to use.
+              There's advanced AI, real-time data, and intelligent systems running behind the scenes — but for cities and commuters, it just feels seamless.
             </p>
             
             <div className="flex justify-center">
@@ -182,7 +182,7 @@ const HowPage = () => {
         
         {/* Workflow Section */}
         <div className="mb-24">
-          <h2 className="text-3xl font-bold text-center mb-12">The Cortex Workflow</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">The Traffikx Workflow</h2>
           
           <div className="relative">
             <div className="absolute left-5 top-6 w-0.5 h-[calc(100%-60px)] bg-gradient-to-b from-primary via-accent to-primary/30"></div>
@@ -190,23 +190,23 @@ const HowPage = () => {
             <div className="space-y-16 pl-4">
               <WorkflowStep 
                 number={1}
-                title="Collect"
-                description="Easily save content from anywhere - web pages, images, documents, notes, and more with our browser extension or mobile app."
+                title="Sense"
+                description="We collect real-time data from traffic cameras, sensors, GPS, and road feeds to understand live movement across the city."
               />
               <WorkflowStep 
                 number={2}
-                title="Organize"
-                description="Cortex automatically categorizes and tags your content using advanced AI, creating a beautiful, organized knowledge base without manual effort."
+                title="Analyze"
+                description="Our AI models process this data instantly — detecting congestion, signal inefficiencies, roadblocks, and emergency priorities."
               />
               <WorkflowStep 
                 number={3}
-                title="Connect"
-                description="Discover surprising connections between your ideas with our neural network visualization that reveals patterns you might miss."
+                title="Optimize"
+                description="Traffikx dynamically adjusts traffic signals and flow patterns across intersections to reduce wait time and improve vehicle movement."
               />
               <WorkflowStep 
                 number={4}
-                title="Create"
-                description="Transform your collected knowledge into new ideas, projects, and content with powerful AI assistance that understands your thinking."
+                title="Respond"
+                description="Whether it’s clearing a path for an ambulance or easing school-hour congestion, Traffikx adapts in real-time to what’s happening on the ground."
               />
             </div>
           </div>
@@ -214,100 +214,100 @@ const HowPage = () => {
         
         {/* Feature Showcases */}
         <div className="mb-24">
-          <h2 className="text-3xl font-bold text-center mb-12">Designed for Your Digital Brain</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Designed for Real-World Streets</h2>
           
           <FeatureShowcase
-            title="Your knowledge base is visual"
-            description="Cortex transforms your notes and saved content into a beautiful, visual interface that makes browsing your digital mind a pleasure."
+            title="Built for developing cities and smart cities alike"
+            description="Our system works with existing infrastructure — no expensive overhauls needed."
             image="/placeholder.svg"
             features={[
-              { icon: <CheckCircle size={24} />, text: "Visual organization of your knowledge" },
-              { icon: <CheckCircle size={24} />, text: "Custom tagging system for personalized categorization" },
-              { icon: <CheckCircle size={24} />, text: "Automatic image extraction from saved content" },
-              { icon: <CheckCircle size={24} />, text: "Beautiful grid layouts that adapt to your content" },
+              { icon: <CheckCircle size={24} />, text: "Works with legacy and smart traffic lights" },
+              { icon: <CheckCircle size={24} />, text: "Integrates with CCTV, GPS, and 3rd-party sensors" },
+              { icon: <CheckCircle size={24} />, text: "Customizable control dashboard for authorities" },
+              { icon: <CheckCircle size={24} />, text: "Cloud + edge deployment for high-speed response" },
             ]}
           />
           
           <FeatureShowcase
-            title="Find anything instantly"
-            description="Powerful semantic search understands what you're looking for, not just matching keywords but finding related concepts."
+            title="Real-time Optimization, Minimal Latency"
+            description="Your roads shouldn't wait for reports. Traffikx detects and resolves congestion before it spirals."
             image="/placeholder.svg"
             features={[
-              { icon: <CheckCircle size={24} />, text: "Neural search that understands concepts, not just keywords" },
-              { icon: <CheckCircle size={24} />, text: "Filter by content type, date, source, and custom tags" },
-              { icon: <CheckCircle size={24} />, text: "Save complex searches for quick access later" },
-              { icon: <CheckCircle size={24} />, text: "Chat with your knowledge base in natural language" },
-            ]}
-            reversed={true}
-          />
-          
-          <FeatureShowcase
-            title="AI-powered connections"
-            description="Discover unexpected connections between ideas with our proprietary neural network that reveals patterns you might miss."
-            image="/placeholder.svg"
-            features={[
-              { icon: <CheckCircle size={24} />, text: "Neural connection map visualizes relationships between your ideas" },
-              { icon: <CheckCircle size={24} />, text: "Suggestion engine recommends relevant content from your knowledge base" },
-              { icon: <CheckCircle size={24} />, text: "Weekly insights report highlights emerging patterns" },
-              { icon: <CheckCircle size={24} />, text: "Continuously learns from your usage patterns" },
-            ]}
-          />
-          
-          <FeatureShowcase
-            title="Your private knowledge hub"
-            description="Unlike social bookmarking tools, Cortex is completely private. Your data remains yours alone, secured with end-to-end encryption."
-            image="/placeholder.svg"
-            features={[
-              { icon: <CheckCircle size={24} />, text: "End-to-end encryption for all your data" },
-              { icon: <CheckCircle size={24} />, text: "No data mining or advertising" },
-              { icon: <CheckCircle size={24} />, text: "Optional local-only storage mode" },
-              { icon: <CheckCircle size={24} />, text: "Export your data anytime in standard formats" },
+              { icon: <CheckCircle size={24} />, text: "Predictive modeling to prevent jams" },
+              { icon: <CheckCircle size={24} />, text: "Emergency vehicle prioritization" },
+              { icon: <CheckCircle size={24} />, text: "Dynamic signal timers based on real load" },
+              { icon: <CheckCircle size={24} />, text: "AI models trained for both peak and off-peak hours" },
             ]}
             reversed={true}
           />
           
           <FeatureShowcase
-            title="An extension for your mind"
-            description="Cortex becomes an extension of your thinking process, available across all your devices and integrated with your workflow."
+            title="Built with Safety & Environment in Mind"
+            description="We believe smoother roads aren't just about speed — they're about cleaner air, fewer accidents, and faster emergency response."
             image="/placeholder.svg"
             features={[
-              { icon: <CheckCircle size={24} />, text: "Synchronized across all your devices in real-time" },
-              { icon: <CheckCircle size={24} />, text: "Browser extensions for Chrome, Firefox, Safari, and Edge" },
-              { icon: <CheckCircle size={24} />, text: "Native apps for iOS, Android, macOS, and Windows" },
-              { icon: <CheckCircle size={24} />, text: "API for custom integrations with your workflow" },
+              { icon: <CheckCircle size={24} />, text: "Reduced emissions from idle traffic" },
+              { icon: <CheckCircle size={24} />, text: "Clearer paths for ambulances and fire trucks" },
+              { icon: <CheckCircle size={24} />, text: "Data-driven road safety alerts" },
+              { icon: <CheckCircle size={24} />, text: "Helps reduce fuel consumption and carbon footprint" },
+            ]}
+          />
+          
+          <FeatureShowcase
+            title="Actionable Insights for Authorities"
+            description="We turn raw traffic data into useful decisions — in real time and over time."
+            image="/placeholder.svg"
+            features={[
+              { icon: <CheckCircle size={24} />, text: "Visual heatmaps and congestion dashboards" },
+              { icon: <CheckCircle size={24} />, text: "Daily and weekly traffic reports" },
+              { icon: <CheckCircle size={24} />, text: "Route-specific optimization suggestions" },
+              { icon: <CheckCircle size={24} />, text: "Citizen feedback loop integrations (coming soon)" },
+            ]}
+            reversed={true}
+          />
+          
+          <FeatureShowcase
+            title="Privacy-First Smart City Tech"
+            description="We don't collect personal data. We don't track drivers. We care about cities, not surveillance."
+            image="/placeholder.svg"
+            features={[
+              { icon: <CheckCircle size={24} />, text: "No facial recognition" },
+              { icon: <CheckCircle size={24} />, text: "No personal movement tracking" },
+              { icon: <CheckCircle size={24} />, text: "Secure infrastructure & encryption-first design" },
+              { icon: <CheckCircle size={24} />, text: "You own your city's data" },
             ]}
           />
         </div>
         
         {/* Values Section */}
         <div className="py-16 px-4 rounded-lg glass-panel my-24">
-          <h2 className="text-3xl font-bold text-center mb-3">We believe software should stay out of the way</h2>
+          <h2 className="text-3xl font-bold text-center mb-3">Traffikx is an invisible upgrade for your city</h2>
           <p className="text-xl text-center text-foreground/80 max-w-3xl mx-auto mb-16">
-            And let you focus on what matters — which isn't software.
+            No new roads. No massive budgets. Just smarter signals, adaptive systems, and smoother movement — for everyone.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ValueProp
               icon={<Logo size={40} className="text-primary" />}
-              title="Focus is freedom"
-              description="Cortex helps you stay focused by eliminating distractions and streamlining your thinking process."
+              title="Works with what you have"
+              description="Traffikx integrates with existing infrastructure, making your current traffic systems smarter without costly replacements."
             />
             <ValueProp
               icon={<Shield className="w-8 h-8 text-primary" />}
-              title="Make it invisible"
-              description="The best tools are the ones you forget you're using because they feel like natural extensions of yourself."
+              title="Privacy by design"
+              description="We optimize traffic flow without tracking individuals. Your city gets smarter, your citizens stay private."
             />
             <ValueProp
               icon={<Lightbulb className="w-8 h-8 text-primary" />}
-              title="Less becomes more"
-              description="By removing unnecessary features and complexity, we create a more powerful experience."
+              title="Invisible intelligence"
+              description="The best traffic management is the kind you never notice — seamless flow that just works."
             />
           </div>
           
           <div className="flex justify-center mt-16">
             <Button size="lg" className="rounded-full" asChild>
               <Link to="/">
-                Start your journey
+                Transform your city
               </Link>
             </Button>
           </div>
