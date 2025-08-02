@@ -105,11 +105,11 @@ const Profile = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'verified': return 'bg-green-100 text-green-800 border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800';
-      case 'pending': return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-800';
-      case 'expired': return 'bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-400 dark:border-red-800';
-      case 'active': return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-800';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800/30 dark:text-gray-400 dark:border-gray-700';
+      case 'verified': return 'bg-green-100 text-green-800 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800';
+      case 'pending': return 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-800';
+      case 'expired': return 'bg-red-100 text-red-800 border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800';
+      case 'active': return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800';
+      default: return 'bg-muted text-muted-foreground border-border';
     }
   };
 
@@ -123,19 +123,19 @@ const Profile = () => {
               <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                 JD
               </div>
-              <button className="absolute -bottom-1 -right-1 bg-white dark:bg-gray-800 rounded-full p-1.5 shadow-md border dark:border-gray-700">
-                <Camera className="h-3 w-3 text-gray-600 dark:text-gray-400" />
+              <button className="absolute -bottom-1 -right-1 bg-background rounded-full p-1.5 shadow-md border border-border">
+                <Camera className="h-3 w-3 text-muted-foreground" />
               </button>
             </div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-2">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{userData.personalInfo.name}</h1>
+                <h1 className="text-2xl font-bold text-foreground">{userData.personalInfo.name}</h1>
                 <Button variant="outline" size="sm">
                   <Edit3 className="h-4 w-4 mr-2" />
                   Edit Details
                 </Button>
               </div>
-              <div className="space-y-2 text-gray-600 dark:text-gray-300">
+              <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
                   <span>{userData.personalInfo.email}</span>
@@ -154,9 +154,9 @@ const Profile = () => {
                   <span>Profile Completion</span>
                   <span>{userData.personalInfo.profileCompletion}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                   <div 
-                    className="bg-green-600 h-2 rounded-full transition-all duration-300" 
+                    className="bg-green-600 dark:bg-green-500 h-2 rounded-full transition-all duration-300" 
                     style={{ width: `${userData.personalInfo.profileCompletion}%` }}
                   ></div>
                 </div>
@@ -171,11 +171,11 @@ const Profile = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <Navigation className="h-5 w-5 text-blue-600" />
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <Navigation className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-gray-600">Total Trips</p>
+                <p className="text-sm text-muted-foreground">Total Trips</p>
                 <p className="text-2xl font-bold">{userData.activity.totalTrips}</p>
               </div>
             </div>
@@ -184,11 +184,11 @@ const Profile = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
-              <div className="bg-green-100 p-2 rounded-lg">
-                <TrendingUp className="h-5 w-5 text-green-600" />
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <TrendingUp className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-gray-600">Distance</p>
+                <p className="text-sm text-muted-foreground">Distance</p>
                 <p className="text-2xl font-bold">{userData.activity.totalDistance}</p>
               </div>
             </div>
@@ -197,11 +197,11 @@ const Profile = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
-              <div className="bg-yellow-100 p-2 rounded-lg">
-                <Clock className="h-5 w-5 text-yellow-600" />
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <Clock className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-gray-600">Avg Time</p>
+                <p className="text-sm text-muted-foreground">Avg Time</p>
                 <p className="text-2xl font-bold">{userData.activity.avgTripTime}</p>
               </div>
             </div>
@@ -210,11 +210,11 @@ const Profile = () => {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
-              <div className="bg-purple-100 p-2 rounded-lg">
-                <Award className="h-5 w-5 text-purple-600" />
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <Award className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-gray-600">Achievements</p>
+                <p className="text-sm text-muted-foreground">Achievements</p>
                 <p className="text-2xl font-bold">{userData.achievements.length}</p>
               </div>
             </div>
@@ -233,31 +233,31 @@ const Profile = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="bg-green-100 dark:bg-green-900/30 p-1.5 rounded-full">
-                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+              <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+                <div className="bg-primary/10 p-1.5 rounded-full">
+                  <CheckCircle className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium text-sm">Trip completed successfully</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Downtown to Airport • 45 min • 2 hours ago</p>
+                  <p className="text-xs text-muted-foreground">Downtown to Airport • 45 min • 2 hours ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-full">
-                  <Navigation className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+              <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+                <div className="bg-primary/10 p-1.5 rounded-full">
+                  <Navigation className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium text-sm">Route optimized</p>
-                  <p className="text-xs text-gray-600">Saved 12 minutes • Yesterday</p>
+                  <p className="text-xs text-muted-foreground">Saved 12 minutes • Yesterday</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="bg-yellow-100 p-1.5 rounded-full">
-                  <Award className="h-4 w-4 text-yellow-600" />
+              <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+                <div className="bg-primary/10 p-1.5 rounded-full">
+                  <Award className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium text-sm">Achievement unlocked</p>
-                  <p className="text-xs text-gray-600">Route Master • 3 days ago</p>
+                  <p className="text-xs text-muted-foreground">Route Master • 3 days ago</p>
                 </div>
               </div>
             </div>
@@ -274,15 +274,15 @@ const Profile = () => {
           <CardContent>
             <div className="space-y-3">
               {userData.achievements.map((achievement, index) => (
-                <div key={index} className="flex items-center gap-3 p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
-                  <div className="bg-yellow-100 p-1.5 rounded-full">
-                    <Star className="h-4 w-4 text-yellow-600" />
+                <div key={index} className="flex items-center gap-3 p-3 bg-muted rounded-lg border border-border">
+                  <div className="bg-primary/10 p-1.5 rounded-full">
+                    <Star className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-sm">{achievement.name}</p>
-                    <p className="text-xs text-gray-600">{achievement.description}</p>
+                    <p className="text-xs text-muted-foreground">{achievement.description}</p>
                   </div>
-                  <span className="text-xs text-gray-500">{achievement.earned}</span>
+                  <span className="text-xs text-muted-foreground">{achievement.earned}</span>
                 </div>
               ))}
             </div>
@@ -308,21 +308,21 @@ const Profile = () => {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <Car className="h-6 w-6 text-blue-600" />
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <Car className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">
                       {vehicle.make} {vehicle.model} {vehicle.year}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mt-1">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
                       <span>License: {vehicle.licensePlate}</span>
                       <span>Color: {vehicle.color}</span>
                       <Badge className={getStatusColor(vehicle.status)}>
                         {vehicle.status}
                       </Badge>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">{vehicle.insurance}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{vehicle.insurance}</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -357,15 +357,15 @@ const Profile = () => {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="bg-green-100 p-2 rounded-lg">
-                    {doc.type === 'Driver License' && <CreditCard className="h-5 w-5 text-green-600" />}
-                    {doc.type === 'Passport' && <Globe className="h-5 w-5 text-green-600" />}
-                    {doc.type === 'Vehicle Registration' && <Car className="h-5 w-5 text-green-600" />}
-                    {doc.type === 'Insurance Certificate' && <Shield className="h-5 w-5 text-green-600" />}
+                  <div className="bg-primary/10 p-2 rounded-lg">
+                    {doc.type === 'Driver License' && <CreditCard className="h-5 w-5 text-primary" />}
+                    {doc.type === 'Passport' && <Globe className="h-5 w-5 text-primary" />}
+                    {doc.type === 'Vehicle Registration' && <Car className="h-5 w-5 text-primary" />}
+                    {doc.type === 'Insurance Certificate' && <Shield className="h-5 w-5 text-primary" />}
                   </div>
                   <div>
                     <h3 className="font-medium">{doc.type}</h3>
-                    <p className="text-sm text-gray-600">Expires: {doc.expiry}</p>
+                    <p className="text-sm text-muted-foreground">Expires: {doc.expiry}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -397,23 +397,23 @@ const Profile = () => {
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <p className="text-sm font-medium text-gray-700 mb-1">Full Name</p>
-              <p className="text-gray-900">{userData.personalInfo.name}</p>
+              <p className="text-sm font-medium text-foreground mb-1">Full Name</p>
+              <p className="text-foreground">{userData.personalInfo.name}</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-700 mb-1">Email</p>
-              <p className="text-gray-900">{userData.personalInfo.email}</p>
+              <p className="text-sm font-medium text-foreground mb-1">Email</p>
+              <p className="text-foreground">{userData.personalInfo.email}</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-700 mb-1">Phone</p>
-              <p className="text-gray-900">{userData.personalInfo.phone}</p>
+              <p className="text-sm font-medium text-foreground mb-1">Phone</p>
+              <p className="text-foreground">{userData.personalInfo.phone}</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-700 mb-1">Date of Birth</p>
-              <p className="text-gray-900">{userData.personalInfo.dateOfBirth}</p>
+              <p className="text-sm font-medium text-foreground mb-1">Date of Birth</p>
+              <p className="text-foreground">{userData.personalInfo.dateOfBirth}</p>
             </div>
           </div>
-          <Button className="bg-black hover:bg-gray-800 text-white">
+          <Button>
             <Edit3 className="h-4 w-4 mr-2" />
             Edit Details
           </Button>
@@ -427,13 +427,13 @@ const Profile = () => {
         </CardHeader>
         <CardContent>
           <div className="flex items-start gap-3">
-            <Home className="h-5 w-5 text-gray-500 mt-1" />
+            <Home className="h-5 w-5 text-muted-foreground mt-1" />
             <div>
               <p className="font-medium">{userData.address.street}</p>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 {userData.address.city}, {userData.address.state} {userData.address.zipCode}
               </p>
-              <p className="text-gray-600">{userData.address.country}</p>
+              <p className="text-muted-foreground">{userData.address.country}</p>
             </div>
           </div>
           <Button variant="outline" className="mt-4">
@@ -453,7 +453,7 @@ const Profile = () => {
             <div key={key} className="flex items-center justify-between">
               <div>
                 <p className="font-medium capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   {key === 'notifications' && 'Receive push notifications'}
                   {key === 'locationServices' && 'Allow location tracking'}
                   {key === 'trafficAlerts' && 'Get traffic condition alerts'}
@@ -489,22 +489,22 @@ const Profile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-black pt-20">
       <AnimatedTransition show={showContent} animation="slide-up" duration={600}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               User Profile
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Manage your personal information, vehicles, documents, and account settings
             </p>
           </div>
 
           {/* Tab Navigation */}
           <div className="mb-8">
-            <div className="border-b border-gray-200 dark:border-gray-700">
+            <div className="border-b border-border">
               <nav className="-mb-px flex space-x-8 justify-center">
                 {tabs.map((tab) => (
                   <button
@@ -512,8 +512,8 @@ const Profile = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`flex items-center gap-2 py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
                       activeTab === tab.id
-                        ? 'border-black dark:border-white text-black dark:text-white'
-                        : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
                     }`}
                   >
                     {tab.icon}

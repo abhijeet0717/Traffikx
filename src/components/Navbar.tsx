@@ -159,8 +159,8 @@ export const Navbar = () => {
   return (
     <>
       <TooltipProvider>
-        <header className="glass-panel fixed top-6 left-1/2 transform -translate-x-1/2 z-40 rounded-lg px-1 py-1">
-          <nav className="flex items-center">
+        <header className="glass-panel fixed top-0 left-0 right-0 z-40 w-full px-6 py-3">
+          <nav className="flex items-center justify-center max-w-7xl mx-auto">
             {/* Cortex with submenu */}
             <NavItem
               to="#"
