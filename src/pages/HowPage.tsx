@@ -315,96 +315,96 @@ const HowPage = () => {
         
         {/* Features Grid */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Core Traffic Management Features</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<Upload className="w-8 h-8 text-primary" />}
-              title="Import"
-              description="Easily import your notes, PDFs, images, and web links into your second brain."
-            />
-            <FeatureCard
               icon={<Database className="w-8 h-8 text-primary" />}
-              title="Organize"
-              description="Our AI automatically categorizes and tags your content for effortless organization."
-            />
-            <FeatureCard
-              icon={<Logo size={40} className="text-primary" />}
-              title="Connect"
-              description="Discover hidden connections between your ideas with our neural network visualization."
-            />
-            <FeatureCard
-              icon={<Search className="w-8 h-8 text-primary" />}
-              title="Retrieve"
-              description="Instantly find exactly what you're looking for with semantic search that understands context."
-            />
-            <FeatureCard
-              icon={<Lightbulb className="w-8 h-8 text-primary" />}
-              title="Generate"
-              description="Get AI-powered insights and suggestions based on your knowledge base."
+              title="Data Collection"
+              description="Gather real-time traffic data from cameras, sensors, GPS feeds, and existing infrastructure across your city."
             />
             <FeatureCard
               icon={<Zap className="w-8 h-8 text-primary" />}
-              title="Execute"
-              description="Turn your ideas into action with project management and collaboration tools."
+              title="Signal Optimization"
+              description="Dynamically adjust traffic light timings based on real-time traffic flow and congestion patterns."
+            />
+            <FeatureCard
+              icon={<Logo size={40} className="text-primary" />}
+              title="Route Intelligence"
+              description="AI-powered route analysis that identifies bottlenecks and suggests optimal traffic flow improvements."
+            />
+            <FeatureCard
+              icon={<Search className="w-8 h-8 text-primary" />}
+              title="Predictive Analytics"
+              description="Forecast traffic patterns and prevent congestion before it happens using machine learning models."
+            />
+            <FeatureCard
+              icon={<Shield className="w-8 h-8 text-primary" />}
+              title="Emergency Priority"
+              description="Instantly clear paths for emergency vehicles with automated signal control and route optimization."
+            />
+            <FeatureCard
+              icon={<Clock className="w-8 h-8 text-primary" />}
+              title="Real-Time Response"
+              description="Respond to traffic incidents and changing conditions in seconds, not minutes or hours."
             />
           </div>
         </div>
         
         {/* Who is it for section */}
-        <div className="mb-20 glass-panel p-10 rounded-lg">
-          <h2 className="text-3xl font-bold text-center mb-12">Made for designers, writers, researchers, developers & visual minds of all kinds</h2>
+        {/* <div className="mb-20 glass-panel p-10 rounded-lg">
+          <h2 className="text-3xl font-bold text-center mb-12">Built for city planners, traffic authorities, government officials & smart city visionaries</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <PenTool className="w-10 h-10 text-primary" />
+                <Shield className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="font-bold text-lg">Designers</h3>
+              <h3 className="font-bold text-lg">Daily Commuters</h3>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-10 h-10 text-primary" />
+                <Database className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="font-bold text-lg">Writers</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Search className="w-10 h-10 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Researchers</h3>
+              <h3 className="font-bold text-lg">Traffic Authorities</h3>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Code className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="font-bold text-lg">Developers</h3>
+              <h3 className="font-bold text-lg">Government Officials</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Lightbulb className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg">Smart City Visionaries</h3>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Technical Details */}
         <div className="mt-20 glass-panel p-8 rounded-lg">
-          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Technical Details</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center text-primary">Technical Infrastructure</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-3">AI Technology</h3>
+              <h3 className="text-xl font-bold mb-3">AI & Machine Learning</h3>
               <p className="text-foreground/80 mb-4">
-                Our platform uses state-of-the-art large language models and vector embeddings to understand the meaning behind your content, not just keywords.
+                Advanced neural networks trained on traffic patterns, real-time computer vision for vehicle detection, and predictive algorithms for congestion forecasting.
               </p>
-              <h3 className="text-xl font-bold mb-3">Data Storage</h3>
+              <h3 className="text-xl font-bold mb-3">Data Security</h3>
               <p className="text-foreground/80">
-                All your data is encrypted end-to-end and stored in secure cloud infrastructure with regular backups and disaster recovery.
+                Enterprise-grade encryption, secure cloud infrastructure, and privacy-first design ensure your city's traffic data remains protected and confidential.
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-3">Integration</h3>
+              <h3 className="text-xl font-bold mb-3">System Integration</h3>
               <p className="text-foreground/80 mb-4">
-                Connect with tools you already use like Notion, Evernote, Google Drive, and more through our extensive API.
+                Seamless integration with existing traffic management systems, CCTV networks, emergency services, and third-party sensors through robust APIs.
               </p>
-              <h3 className="text-xl font-bold mb-3">Customization</h3>
+              <h3 className="text-xl font-bold mb-3">Scalability</h3>
               <p className="text-foreground/80">
-                Tailor the experience to your needs with customizable workflows, templates, and visualization options.
+                Cloud-native architecture that scales from single intersections to entire metropolitan areas, with edge computing for ultra-low latency responses.
               </p>
             </div>
           </div>
