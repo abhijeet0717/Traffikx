@@ -158,11 +158,10 @@ const ManagePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Calendar Section */}
             <div className="lg:col-span-2">
-              <div className="flex gap-4">
-                {/* Calendar */}
-                <div className="flex-1">
-                  <Card>
-                    <CardHeader>
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div>
                       <CardTitle className="flex items-center gap-2">
                         <CalendarDays className="h-5 w-5" />
                         Holiday Traffic Calendar
@@ -170,94 +169,88 @@ const ManagePage = () => {
                       <CardDescription>
                         Select a date to view traffic congestion predictions. Colored dots indicate congestion levels.
                       </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <Calendar
-                        mode="single"
-                        selected={selectedDate}
-                        onSelect={handleDateSelect}
-                        className="rounded-md border"
-                        modifiers={{
-                          holiday: holidayData.map(h => h.date)
-                        }}
-                        modifiersStyles={{
-                          holiday: { fontWeight: 'bold' }
-                        }}
-                      />
-                      
-                      {/* Legend */}
-                      <div className="mt-4 p-4 bg-muted rounded-lg">
-                        <h4 className="font-medium mb-2">Congestion Levels</h4>
-                        <div className="flex flex-wrap gap-4 text-sm">
-                          <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                            <span>Low</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                            <span>Medium</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-orange-400"></div>
-                            <span>High</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                            <span>Very High</span>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-                
-                {/* Current Time */}
-                <div className="w-64">
-                  <Card className="h-fit">
-                    <CardHeader className="text-center">
-                      <CardTitle className="flex items-center justify-center gap-2 text-lg">
-                        <Clock className="h-5 w-5" />
+                    </div>
+                    <div className="text-right">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                        <Clock className="h-4 w-4" />
                         Current Time
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center space-y-4">
-                      {/* IST Time */}
-                      <div className="border-b border-border pb-3">
-                        <div className="text-sm text-muted-foreground mb-1">IST (Local)</div>
-                        <div className="text-2xl font-mono font-bold text-primary">
-                          {format(currentTime, 'HH:mm:ss')}
+                      </div>
+                      <div className="space-y-2">
+                        {/* IST Time */}
+                        <div className="border-b border-border pb-2">
+                          <div className="text-xs text-muted-foreground">IST (Local)</div>
+                          <div className="text-lg font-mono font-bold text-primary">
+                            {format(currentTime, 'HH:mm:ss')}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            {format(currentTime, 'EEE, MMM d, yyyy')}
+                          </div>
                         </div>
-                        <div className="text-xs text-muted-foreground">
-                          {format(currentTime, 'EEE, MMM d, yyyy')}
+                        
+                        {/* UTC Time */}
+                        <div>
+                          <div className="text-xs text-muted-foreground">UTC</div>
+                          <div className="text-md font-mono font-bold text-foreground">
+                            {new Date(currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000)).toLocaleTimeString('en-US', { 
+                              hour12: false, 
+                              timeZone: 'UTC',
+                              hour: '2-digit',
+                              minute: '2-digit',
+                              second: '2-digit'
+                            })}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            {new Date(currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000)).toLocaleDateString('en-US', { 
+                              timeZone: 'UTC',
+                              weekday: 'short',
+                              month: 'short',
+                              day: 'numeric',
+                              year: 'numeric'
+                            })}
+                          </div>
                         </div>
                       </div>
-                      
-                      {/* UTC Time */}
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">UTC</div>
-                        <div className="text-xl font-mono font-bold text-foreground">
-                          {new Date(currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000)).toLocaleTimeString('en-US', { 
-                            hour12: false, 
-                            timeZone: 'UTC',
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            second: '2-digit'
-                          })}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {new Date(currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000)).toLocaleDateString('en-US', { 
-                            timeZone: 'UTC',
-                            weekday: 'short',
-                            month: 'short',
-                            day: 'numeric',
-                            year: 'numeric'
-                          })}
-                        </div>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Calendar
+                    mode="single"
+                    selected={selectedDate}
+                    onSelect={handleDateSelect}
+                    className="rounded-md border"
+                    modifiers={{
+                      holiday: holidayData.map(h => h.date)
+                    }}
+                    modifiersStyles={{
+                      holiday: { fontWeight: 'bold' }
+                    }}
+                  />
+                  
+                  {/* Legend */}
+                  <div className="mt-4 p-4 bg-muted rounded-lg">
+                    <h4 className="font-medium mb-2">Congestion Levels</h4>
+                    <div className="flex flex-wrap gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                        <span>Low</span>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <span>Medium</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-orange-400"></div>
+                        <span>High</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                        <span>Very High</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Details Section */}
