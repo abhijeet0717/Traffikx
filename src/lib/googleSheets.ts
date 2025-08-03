@@ -7,7 +7,7 @@ export interface WaitlistEntry {
 }
 
 // Replace with your Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFxyQoPT4AqjCkmRQUBnxNOO3ZRzHEDGWEeGeBHSK4noeqBpx-DLS24ANPTmtoKAMQ/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFxyQoPT4AqjCkmRQUBnxNOO3ZRzHEDGWEeGeBHSK4noeqBpx-DLS24ANPTmtoKAMQ/exechttps://script.google.com/macros/s/AKfycbw8VgvcmPdjM2zD6dxAuQN4OdP2qAySpTfjPpqndg8iwvysWBbu89qgZCqam4MsD7Ww/exec'
 
 export const saveToGoogleSheets = async (formData: WaitlistEntry): Promise<boolean> => {
   try {
