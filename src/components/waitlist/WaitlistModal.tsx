@@ -19,9 +19,20 @@ interface WaitlistModalProps {
 }
 
 const TOOL_OPTIONS = [
-  "Obsidian", "Napkin AI", "Mem", "Otio", "Fabric", "mymind", "Notion", 
-  "Evernote", "Craft", "Me.bot", "Raindrop", "MyMemo", "logseq", "inkdrop", 
-  "Traverse", "Eraser", "MuseApp", "Milanote", "Supernotes", "others"
+  "Student",
+  "Technology Professional",
+  "Healthcare Worker", 
+  "Government Employee",
+  "Education Professional",
+  "Transportation & Logistics",
+  "Business & Finance",
+  "Legal & Consulting",
+  "Construction & Engineering",
+  "Sales & Marketing",
+  "Emergency Services",
+  "Uber/Taxi Driver",
+  "Delivery Driver",
+  "Others"
 ]
 
 export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
@@ -98,7 +109,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="currentTool">Current Tool</Label>
+            <Label htmlFor="currentTool">Profession</Label>
             <select
               id="currentTool"
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -106,7 +117,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
               onChange={(e) => setFormData({ ...formData, currentTool: e.target.value })}
               required
             >
-              <option value="">Select a tool</option>
+              <option value="">Select a Profession</option>
               {TOOL_OPTIONS.map((tool) => (
                 <option key={tool} value={tool}>
                   {tool}

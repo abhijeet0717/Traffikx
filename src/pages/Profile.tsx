@@ -198,11 +198,11 @@ const Profile = () => {
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
               <div className="bg-primary/10 p-2 rounded-lg">
-                <Clock className="h-5 w-5 text-primary" />
+                <Activity className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Avg Time</p>
-                <p className="text-2xl font-bold">{userData.activity.avgTripTime}</p>
+                <p className="text-sm text-muted-foreground">CO2 Reduced</p>
+                <p className="text-2xl font-bold">{userData.activity.co2Reduced}</p>
               </div>
             </div>
           </CardContent>
