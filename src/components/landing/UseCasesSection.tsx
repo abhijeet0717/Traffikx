@@ -20,7 +20,7 @@ const UseCasesSection = ({
   const [activeUserType, setActiveUserType] = useState<UserType>('Marketers');
   const currentCase = userCasesData[activeUserType];
   return <AnimatedTransition show={show} animation="slide-up" duration={600}>
-      <div className="py-24 md:py-32">
+      {/* <div className="py-24 md:py-32">
         <div className="max-w-6xl mx-auto px-4 mb-16">
           <h2 className="text-3xl text-center mb-12 tracking-tight text-blue-700 font-bold md:text-7xl">
             For visual minds of all kinds.
@@ -44,7 +44,7 @@ const UseCasesSection = ({
               </div>
               
               {/* Render the appropriate component based on activeUserType */}
-              {activeUserType === 'Marketers' && <MarketersCase data={currentCase} />}
+              {/*{activeUserType === 'Marketers' && <MarketersCase data={currentCase} />}
               {activeUserType === 'Designers' && <DesignersCase data={currentCase} />}
               {activeUserType === 'Writers' && <WritersCase data={currentCase} />}
               {activeUserType === 'Researchers' && <ResearchersCase data={currentCase} />}
@@ -53,7 +53,8 @@ const UseCasesSection = ({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <div></div>
     </AnimatedTransition>;
 };
 export default UseCasesSection;

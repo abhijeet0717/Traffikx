@@ -164,7 +164,7 @@ export const Navbar = () => {
             {/* Cortex with submenu */}
             <NavItem
               to="#"
-              icon={<Logo size={28} />}
+              icon={<Logo size={96} />}
               label="Traffikx"
               active={['what', 'why', 'how'].includes(active)}
               onClick={() => {}}

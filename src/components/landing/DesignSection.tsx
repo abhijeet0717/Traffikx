@@ -10,18 +10,38 @@ export const DesignSection = ({
 }: DesignSectionProps) => {
   const templateCategories = [{
     title: "Commuter Routes",
-    templates: ["Daily Work Route", "School Drop-off", "Morning Commute", "Evening Return", "Weekend Errands", "Gym Sessions", "Doctor Visits", "Shopping Trips"]
+    images: [
+      { name: "Mumbai Traffic", src: "/traffic-maps/mumbai.PNG" },
+      { name: "Delhi Routes", src: "/traffic-maps/delhi 2.PNG" },
+      { name: "Bangalore Network", src: "/traffic-maps/Banglore.PNG" },
+      { name: "Chennai Flow", src: "/traffic-maps/chennai.PNG" }
+    ]
   }, {
-    title: "Business Travel",
-    templates: ["Client Meetings", "Business Conference", "Delivery Routes", "Service Calls", "Multi-stop Tours", "Sales Visits", "Site Inspections", "Team Travel"]
+    title: "Business Travel", 
+    images: [
+      { name: "Chicago Downtown", src: "/traffic-maps/Chicago.PNG" },
+      { name: "Chicago Complex", src: "/traffic-maps/chicago maze.PNG" },
+      { name: "New York Grid", src: "/traffic-maps/New York.PNG" },
+      { name: "NY 81st Street", src: "/traffic-maps/new york 8ist.PNG" }
+    ]
   }, {
     title: "City Planning",
-    templates: ["Traffic Flow Analysis", "Public Transport Routes", "Emergency Services", "School Bus Routes", "Cargo Distribution", "Tourism Routes", "Event Traffic", "Construction Detours"]
+    images: [
+      { name: "Ahmedabad Network", src: "/traffic-maps/amedabad.PNG" },
+      { name: "Bengaluru Metro", src: "/traffic-maps/Bengluru.PNG" },
+      { name: "Bengaluru Routes", src: "/traffic-maps/bengluru 7.PNG" },
+      { name: "Bangalore Traffic", src: "/traffic-maps/banglore 6.PNG" }
+    ]
   }, {
     title: "Personal Journeys",
-    templates: ["Vacation Planning", "Road Trip Routes", "Cycling Paths", "Walking Routes", "Running Trails", "Scenic Drives", "Airport Transfers", "Special Events"]
+    images: [
+      { name: "Lucknow Roads", src: "/traffic-maps/Lucknow.PNG" },
+      { name: "Patna Navigation", src: "/traffic-maps/Patna.PNG" },
+      { name: "Ranchi Routes", src: "/traffic-maps/Ranchi.PNG" },
+      { name: "San Francisco", src: "/traffic-maps/san fransico.PNG" }
+    ]
   }];
-  const [currentTemplates, setCurrentTemplates] = useState<string[]>([]);
+  const [currentImages, setCurrentImages] = useState<{name: string, src: string}[]>([]);
   const [category, setCategory] = useState(0);
   const [animating, setAnimating] = useState(false);
   useEffect(() => {
@@ -29,21 +49,21 @@ export const DesignSection = ({
       setAnimating(true);
       setTimeout(() => {
         setCategory(prev => (prev + 1) % templateCategories.length);
-        setCurrentTemplates(templateCategories[(category + 1) % templateCategories.length].templates.sort(() => Math.random() - 0.5).slice(0, 8));
+        setCurrentImages(templateCategories[(category + 1) % templateCategories.length].images);
         setAnimating(false);
       }, 500);
     }, 5000);
     return () => clearInterval(timer);
   }, [category]);
   useEffect(() => {
-    setCurrentTemplates(templateCategories[0].templates.sort(() => Math.random() - 0.5).slice(0, 8));
+    setCurrentImages(templateCategories[0].images);
   }, []);
   const changeCategory = (index: number) => {
     if (category === index || animating) return;
     setAnimating(true);
     setTimeout(() => {
       setCategory(index);
-      setCurrentTemplates(templateCategories[index].templates.sort(() => Math.random() - 0.5).slice(0, 8));
+      setCurrentImages(templateCategories[index].images);
       setAnimating(false);
     }, 500);
   };
@@ -67,12 +87,19 @@ export const DesignSection = ({
         <div className="relative">
           <AnimatedTransition show={!animating} animation="fade" duration={500}>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              {currentTemplates.map((template, idx) => <Card key={idx} className="group overflow-hidden hover:shadow-xl transition-all duration-500 cursor-pointer">
-                  <div className="relative h-40 bg-gradient-to-br from-primary/5 to-primary/20 p-6 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300"></div>
-                    <span className="font-medium text-lg text-center z-10 group-hover:scale-105 transition-transform duration-300">
-                      {template}
-                    </span>
+              {currentImages.map((image, idx) => <Card key={idx} className="group overflow-hidden hover:shadow-xl transition-all duration-500 cursor-pointer">
+                  <div className="relative h-40 bg-gradient-to-br from-primary/5 to-primary/20 overflow-hidden">
+                    <img 
+                      src={image.src} 
+                      alt={image.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
+                      <span className="font-medium text-sm text-white">
+                        {image.name}
+                      </span>
+                    </div>
                   </div>
                 </Card>)}
             </div>
