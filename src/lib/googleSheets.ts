@@ -2,18 +2,20 @@ export interface WaitlistEntry {
   name: string
   email: string
   linkedin: string
-  currentTool: string  // This matches your form field name
+  currentTool: string
   reason: string
 }
 
-// Replace with your Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyf3l7L3Km96NHxcIf62CxOfSzZd3UuyQqpNPi-Jfrkz0nld2SQVVgxwnVcOrUqj-lY/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxjhQudsoaoqmeBHpLYbniLpqRI5u81sbmb03iDmyy9K9YMaN2Fzd_aqU42VCOkMMcj/exec';
 
 export const saveToGoogleSheets = async (formData: WaitlistEntry): Promise<boolean> => {
   try {
+    console.log('🚀 Starting request to Google Sheets...');
+    console.log('📤 Data being sent:', formData);
+
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
-      mode: 'no-cors', // Required for Google Apps Script
+      mode: 'no-cors', // ✅ This is essential for Google Apps Script
       headers: {
         'Content-Type': 'application/json',
       },
@@ -21,16 +23,19 @@ export const saveToGoogleSheets = async (formData: WaitlistEntry): Promise<boole
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin,
-        currentTool: formData.currentTool, // Matches your field name
+        currentTool: formData.currentTool,
         reason: formData.reason
       })
-    })
+    });
 
-    // With no-cors, we can't read response, so assume success
-    return true
+    console.log('📡 Request sent successfully');
+    
+    // With no-cors, we can't read the response, but if no error was thrown,
+    // we assume the request was successful
+    return true;
     
   } catch (error) {
-    console.error('Error saving to Google Sheets:', error)
-    return false
+    console.error('🔥 Fetch Error:', error);
+    return false;
   }
 }
